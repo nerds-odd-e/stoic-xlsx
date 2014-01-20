@@ -17,4 +17,22 @@ describe('When parsing the Travels spreadsheet', function() {
     var aDate = travels.Restaurants.values[1][l-5];
     expect(aDate).to.be.instanceOf(Date);
   });
+  it('Must find a raw number format where expected', function() {
+    var l = travels.Restaurants.values[0].length;
+    var aDateNF = travels.Restaurants.numberFormats[1][l-5];
+    expect(aDateNF).to.equal('m/d/yyyy h:mm:ss');
+  });
+});
+describe('When parsing the SmallDateFormats spreadsheet', function() {
+  var temporary;
+  before(function(done) {
+    var filePath = 'test/assets/SmallDateFormats.xlsx';
+    stoicXlsx.parseXlsx(filePath, {evaluateFmt: true, skipEmptyCells: true, skipRawnf: false}, function(e, sheets) {
+      temporary = sheets;
+      done();
+    });
+  });
+  it('Must have parsed 1 sheet', function() {
+    expect(Object.keys(temporary)).to.deep.equal(['Sheet1']);    
+  });
 });
