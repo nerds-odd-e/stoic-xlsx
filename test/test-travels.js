@@ -4,8 +4,8 @@ describe('When parsing the Travels spreadsheet', function() {
   var travels;
   before(function(done) {
     var filePath = 'test/assets/Travels.xlsx';
-    stoicXlsx.parseXlsx(filePath, {evaluateFmt: true, skipEmptyCells: true, skipRawnf: false}, function(e, sheets) {
-      travels = sheets;
+    stoicXlsx.parseXlsx(filePath, {evaluateFmt: true, skipEmptyCells: true, skipRawnf: false}, function(e, spreadsheet) {
+      travels = spreadsheet.sheets;
       done();
     });
   });
@@ -24,13 +24,17 @@ describe('When parsing the Travels spreadsheet', function() {
   });
 });
 describe('When parsing the SmallDateFormats spreadsheet', function() {
-  var temporary;
+  var temporary, name;
   before(function(done) {
     var filePath = 'test/assets/SmallDateFormats.xlsx';
-    stoicXlsx.parseXlsx(filePath, {evaluateFmt: true, skipEmptyCells: true, skipRawnf: false}, function(e, sheets) {
-      temporary = sheets;
+    stoicXlsx.parseXlsx(filePath, {evaluateFmt: true, skipEmptyCells: true, skipRawnf: false}, function(e, spreadsheet) {
+      temporary = spreadsheet.sheets;
+      name = spreadsheet.name;
       done();
     });
+  });
+  it('Must have found a name', function() {
+    expect(name).to.equal('SmallDateFormats');    
   });
   it('Must have parsed 1 sheet', function() {
     expect(Object.keys(temporary)).to.deep.equal(['Sheet1']);    
