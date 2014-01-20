@@ -4,7 +4,7 @@ describe('When parsing the Travels spreadsheet', function() {
   var travels;
   before(function(done) {
     var filePath = 'test/assets/Travels.xlsx';
-    stoicXlsx.parseXlsx(filePath, {evaluateFmt: true, skipEmptyCells: true, skipRawnf: false}, function(e, spreadsheet) {
+    stoicXlsx.parseXlsx(filePath, function(e, spreadsheet) {
       travels = spreadsheet.sheets;
       done();
     });
@@ -27,7 +27,7 @@ describe('When parsing the SmallDateFormats spreadsheet', function() {
   var temporary, name;
   before(function(done) {
     var filePath = 'test/assets/SmallDateFormats.xlsx';
-    stoicXlsx.parseXlsx(filePath, {evaluateFmt: true, skipEmptyCells: true, skipRawnf: false}, function(e, spreadsheet) {
+    stoicXlsx.parseXlsx(filePath, function(e, spreadsheet) {
       temporary = spreadsheet.sheets;
       name = spreadsheet.name;
       done();
