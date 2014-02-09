@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/sutoiku/stoic-xlsx",
   "dependencies": {
-    "xlsx": "git://github.com/nerds-odd-e/js-xlsx.git#rawnf_support"
+    "xlsx": "0.5.3"
   },
   "devDependencies": {
     "chai": "*"
