@@ -1,6 +1,6 @@
 {
   "name": "stoic-xlsx",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Import-Export xlsx Files to Stoic JSON spreadsheets",
   "main": "lib/stoic-xlsx.js",
   "scripts": {
