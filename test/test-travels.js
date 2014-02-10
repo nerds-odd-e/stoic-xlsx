@@ -16,6 +16,7 @@ describe('When parsing the Travels spreadsheet', function() {
     var l = travels.Restaurants.values[0].length;
     var aDate = travels.Restaurants.values[1][l-5];
     expect(aDate).to.be.instanceOf(Date);
+    expect(isNaN(aDate.valueOf())).to.equal(false);
   });
   it('Must find a raw number format where expected', function() {
     var l = travels.Restaurants.values[0].length;
