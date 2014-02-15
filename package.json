@@ -1,6 +1,6 @@
 {
   "name": "stoic-xlsx",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Import-Export xlsx Files to Stoic JSON spreadsheets",
   "main": "lib/stoic-xlsx.js",
   "scripts": {
@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/sutoiku/stoic-xlsx",
   "dependencies": {
-    "xlsx": "0.5.3"
+    "xlsx": "0.5.7"
   },
   "devDependencies": {
     "chai": "*"
